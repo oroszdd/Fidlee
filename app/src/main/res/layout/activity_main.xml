@@ -13,84 +13,94 @@
         android:layout_height="30dp"
         android:layout_alignParentTop="true"
         android:layout_marginTop="10dp"
-        android:background="#f5ffb3" />
+        android:background="#f5ffb3"
+        android:inputType="text" />
     <EditText
         android:id="@+id/editText2"
         android:layout_width="350dp"
         android:layout_height="30dp"
         android:layout_below="@+id/editText1"
         android:layout_marginTop="10dp"
-        android:background="#f5ffb3" />
+        android:background="#f5ffb3"
+        android:inputType="text"/>
     <EditText
         android:id="@+id/editText3"
         android:layout_width="350dp"
         android:layout_height="30dp"
         android:layout_below="@+id/editText2"
         android:layout_marginTop="10dp"
-        android:background="#f5ffb3" />
+        android:background="#f5ffb3"
+        android:inputType="text"/>
     <EditText
         android:id="@+id/editText4"
         android:layout_width="350dp"
         android:layout_height="30dp"
         android:layout_below="@+id/editText3"
         android:layout_marginTop="10dp"
-        android:background="#f5ffb3" />
+        android:background="#f5ffb3"
+        android:inputType="text"/>
     <EditText
         android:id="@+id/editText5"
         android:layout_width="350dp"
         android:layout_height="30dp"
         android:layout_below="@+id/editText4"
         android:layout_marginTop="10dp"
-        android:background="#f5ffb3" />
+        android:background="#f5ffb3"
+        android:inputType="text"/>
     <EditText
         android:id="@+id/editText6"
         android:layout_width="350dp"
         android:layout_height="30dp"
         android:layout_below="@+id/editText5"
         android:layout_marginTop="10dp"
-        android:background="#f5ffb3" />
+        android:background="#f5ffb3"
+        android:inputType="text"/>
     <EditText
         android:id="@+id/editText7"
         android:layout_width="350dp"
         android:layout_height="30dp"
         android:layout_below="@+id/editText6"
         android:layout_marginTop="10dp"
-        android:background="#f5ffb3" />
+        android:background="#f5ffb3"
+        android:inputType="text"/>
     <EditText
         android:id="@+id/editText8"
         android:layout_width="350dp"
         android:layout_height="30dp"
         android:layout_below="@+id/editText7"
         android:layout_marginTop="10dp"
-        android:background="#f5ffb3" />
+        android:background="#f5ffb3"
+        android:inputType="text"/>
     <EditText
         android:id="@+id/editText9"
         android:layout_width="350dp"
         android:layout_height="30dp"
         android:layout_below="@+id/editText8"
         android:layout_marginTop="10dp"
-        android:background="#f5ffb3" />
+        android:background="#f5ffb3"
+        android:inputType="text"/>
     <EditText
         android:id="@+id/editText10"
         android:layout_width="350dp"
         android:layout_height="30dp"
         android:layout_below="@+id/editText9"
         android:layout_marginTop="10dp"
-        android:background="#f5ffb3" />
+        android:background="#f5ffb3"
+        android:inputType="text"/>
     <EditText
         android:id="@+id/editText11"
         android:layout_width="350dp"
         android:layout_height="30dp"
         android:layout_below="@+id/editText10"
         android:layout_marginTop="10dp"
-        android:background="#f5ffb3" />
+        android:background="#f5ffb3"
+        android:inputType="text"/>
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="120dp"
+        android:layout_width="130dp"
         android:layout_height="70dp"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:text="Button" />
 
@@ -104,10 +114,9 @@
 
     <Button
         android:id="@+id/button4"
-        android:layout_width="120dp"
+        android:layout_width="130dp"
         android:layout_height="70dp"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:text="Button" />
 </RelativeLayout>
