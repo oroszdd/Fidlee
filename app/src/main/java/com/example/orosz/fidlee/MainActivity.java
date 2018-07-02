@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
         final EditText editText1;
         editText1 = findViewById(R.id.editText1);
 
+        //Comment
 
     }
 }
