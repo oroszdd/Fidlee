@@ -1,35 +1,43 @@
 package com.example.orosz.fidlee;
 
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+
+    // Fragment manager object for fragment managing
+    public static FragmentManager fragmentManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final EditText editText1, editText2, editText3, editText4, editText5, editText6, editText7
-                , editText8, editText9, editText10, editText11;
+        // Necessary in the following commands
+        fragmentManager = getSupportFragmentManager();
 
-        editText1 = findViewById(R.id.editText1);
-        editText2 = findViewById(R.id.editText2);
-        editText3 = findViewById(R.id.editText3);
-        editText4 = findViewById(R.id.editText4);
-        editText5 = findViewById(R.id.editText5);
-        editText6 = findViewById(R.id.editText6);
-        editText7 = findViewById(R.id.editText7);
-        editText8 = findViewById(R.id.editText8);
-        editText9 = findViewById(R.id.editText9);
-        editText10 = findViewById(R.id.editText10);
-        editText11 = findViewById(R.id.editText11);
+        // Is container available? ( If it is not null, then not )
+        if(findViewById(R.id.fragment_container)!=null){
 
-        
+            // Is it resumed?
+            if(savedInstanceState!=null){
+                return;
+            }
 
+            // Creating the main fragment and putting it on screen
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
+            FishingFragment fishingFragment = new FishingFragment();
 
+            fragmentTransaction.add(R.id.fragment_container,fishingFragment,null);
+
+            fragmentTransaction.commit();
+
+        }
     }
 }
