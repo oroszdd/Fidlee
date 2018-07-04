@@ -1,6 +1,11 @@
 package com.example.orosz.fidlee;
 
+import java.util.Random;
+
 public abstract class Item {
+
+    //To use randomized numbers
+    static Random rand = new Random();
 
     // Constructor
     public Item(){
@@ -8,9 +13,9 @@ public abstract class Item {
     }
 
     // Give back a random item
-    public Fish get() {
+    public static Item get() {
 
-        return new Fish(3,"Simpleton");
+        return Fish.get();
 
     }
 

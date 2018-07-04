@@ -16,14 +16,14 @@ public class MyThread extends Thread {
     // Declaring variables for the passage of time
     private long currentTime, previousTime = 0;
 
-    Item item = new Item() {
+    private Item item = new Item() {
         @Override
         public int sell() {
             return 0;
         }
     };
 
-    Fish fish = new Fish(1,"a");
+    Fish fish = Fish.get();
 
     public MyThread(){
 
@@ -42,7 +42,7 @@ public class MyThread extends Thread {
 
                 // Main Loop body
 
-                item = item.get();
+                item = Item.get();
 
 
                 // For test purposes
