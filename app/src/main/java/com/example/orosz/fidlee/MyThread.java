@@ -16,6 +16,8 @@ public class MyThread extends Thread {
     // Declaring variables for the passage of time
     private long currentTime, previousTime = 0;
 
+    private CaughtList caught = new CaughtList();
+
     private Item item = new Item() {
         @Override
         public int sell() {
@@ -43,7 +45,6 @@ public class MyThread extends Thread {
                 // Main Loop body
 
                 item = Item.get();
-
 
                 // For test purposes
                 Log.i("loop", "Value of the item: " + item.sell());
