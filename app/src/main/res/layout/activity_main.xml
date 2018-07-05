@@ -31,5 +31,13 @@
 
     </FrameLayout>
 
+    <fragment
+        android:id="@+id/loop_fragment"
+        android:name="com.example.orosz.fidlee.LoopFragment"
+        android:layout_width="1dp"
+        android:layout_height="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
 </android.support.constraint.ConstraintLayout>

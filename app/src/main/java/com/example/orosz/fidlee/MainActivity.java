@@ -19,9 +19,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // For the loop test
-        MyThread myThread = new MyThread();
-
         // Necessary in the following commands
         fragmentManager = getSupportFragmentManager();
 
@@ -42,8 +39,5 @@ public class MainActivity extends AppCompatActivity {
 
             fragmentTransaction.commit();
         }
-
-        // Running the new Thread with a loop
-        myThread.start();
     }
 }
