@@ -31,4 +31,9 @@ public class Fish extends Item {
         return val;
     }
 
+    @Override
+    public String getName() {
+        return String.valueOf(typ);
+    }
+
 }

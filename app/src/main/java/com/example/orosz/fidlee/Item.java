@@ -22,5 +22,8 @@ public abstract class Item {
     // Sell item
     public abstract int sell();
 
+    //Get name
+    public abstract String getName();
+
 
 }

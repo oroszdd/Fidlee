@@ -46,4 +46,9 @@ public class Chest extends Item {
 
     }
 
+    @Override
+    public String getName() {
+        return "Chest";
+    }
+
 }

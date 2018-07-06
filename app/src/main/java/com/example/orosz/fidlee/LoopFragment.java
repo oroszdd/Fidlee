@@ -22,12 +22,9 @@ public class LoopFragment extends Fragment implements Runnable {
 
     private CaughtList caught = new CaughtList();
 
-    private Item item = new Item() {
-        @Override
-        public int sell() {
-            return 0;
-        }
-    };
+    //private Item item;
+    private String itemName;
+    private int i = 0;
 
 
     public LoopFragment() {
@@ -62,10 +59,20 @@ public class LoopFragment extends Fragment implements Runnable {
                 previousTime = currentTime;
 
                 // Main Loop body
-                item = Item.get();
+
+                Item item = Item.get();
+
+                //itemName = new String();
+
+                //itemName = "item" + i;
+
+                //Item itemName = Item.get();
+
+                // Add item to Data dump
+                MainActivity.user.items.add(0,item);
 
                 // For test purposes
-                Log.i("loop", "Value of the item: " + item.sell());
+                Log.i("loop", "Value of the item: " + MainActivity.user.items.get(0).sell()+ ", Size: " + MainActivity.user.items.size() + ", Capacity: " + MainActivity.user.items.capacity());
 
                 }
         }

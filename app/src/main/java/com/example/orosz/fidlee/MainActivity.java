@@ -11,13 +11,20 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+    // User data
+    public static User user;
+
     // Fragment manager object for fragment managing
     public static FragmentManager fragmentManager;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // Initialize user
+        user = new User();
 
         // Necessary in the following commands
         fragmentManager = getSupportFragmentManager();
@@ -38,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
             fragmentTransaction.add(R.id.fragment_container,fishingFragment,null);
 
             fragmentTransaction.commit();
+
+            }
         }
     }
-}
