@@ -1,6 +1,7 @@
 package com.example.orosz.fidlee;
 
 import java.util.Random;
+import java.util.Vector;
 
 public class Chest extends Item {
 
@@ -26,10 +27,10 @@ public class Chest extends Item {
         }
     }
 
-    public CaughtList open(){
-        CaughtList caught = new CaughtList();
+    public Vector<Item> open(){
+        Vector<Item> caught = new Vector<Item>();
         while(this.lvl > 0){
-            caught.addItem(Fish.get());
+            caught.add(Fish.get());
             this.decLvl(rand.nextInt(maxlvl)+1);
         }
         return caught;
@@ -37,10 +38,10 @@ public class Chest extends Item {
 
     @Override
     public int sell(){
-        CaughtList caught = this.open();
+        Vector<Item> caught = this.open();
         int price = 0;
         while(!caught.isEmpty()){
-            price = price + caught.getFirstItem().sell();
+            price = price + caught.remove(0).sell();
         }
         return price;
 

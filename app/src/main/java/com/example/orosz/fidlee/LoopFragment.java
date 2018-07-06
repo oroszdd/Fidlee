@@ -20,8 +20,6 @@ public class LoopFragment extends Fragment implements Runnable {
     // Declaring variables for the passage of time
     private long currentTime, previousTime = 0;
 
-    private CaughtList caught = new CaughtList();
-
     //private Item item;
     private String itemName;
     private int i = 0;
