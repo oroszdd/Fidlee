@@ -1,51 +1,32 @@
 package com.example.orosz.fidlee;
 
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
+import android.app.Activity;
+import android.graphics.Point;
 import android.os.Bundle;
-import android.util.Log;
-import android.widget.EditText;
-import android.widget.FrameLayout;
-import android.widget.TextView;
+import android.view.Display;
+import android.view.Window;
+import android.view.WindowManager;
 
-public class MainActivity extends AppCompatActivity {
-
-    // User data
-    public static User user;
-
-    // Fragment manager object for fragment managing
-    public static FragmentManager fragmentManager;
-
+public class MainActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
 
-        // Initialize user
-        user = new User();
+        // Set Fullscreen with no Title
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 
-        // Necessary in the following commands
-        fragmentManager = getSupportFragmentManager();
+        // Get a Display object to access screen details
+        Display display = getWindowManager().getDefaultDisplay();
+        // Load the resolution into a Point object
+        Point size = new Point();
+        display.getSize(size);
+        // Load screen data into Constants
+        Constants.SCREEN_WIDTH = size.x;
+        Constants.SCREEN_HEIGHT = size.y;
 
-        // Is container available? ( If it is not null, then not )
-        if(findViewById(R.id.fragment_container)!=null){
-
-            // Is it resumed?
-            if(savedInstanceState!=null){
-                return;
-            }
-
-            // Creating the main fragment and putting it on screen
-            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-
-            FishingFragment fishingFragment = new FishingFragment();
-
-            fragmentTransaction.add(R.id.fragment_container,fishingFragment,null);
-
-            fragmentTransaction.commit();
-
-            }
-        }
+        // Set view on GamePanel
+        setContentView(new GamePanel(this));
     }
+}

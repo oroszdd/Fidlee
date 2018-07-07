@@ -5,7 +5,7 @@ import java.util.Vector;
 public class User{
 
     // Item dump
-    public Vector<Item> items = new Vector<Item>();
+    public Vector<Item> items = new Vector<Item>(100,100);
     // .add(x) : ads x as the last element
     // .size() : gets current size of the vector
     // .get(index("="0)) : gets the indexed value (first element)
