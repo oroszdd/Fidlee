@@ -42,9 +42,9 @@ public class Fish extends Item {
 
         //gets a possibility array for the type
         int[] typePossibilities = new int[Fishes.values().length];
-        typePossibilities[0] = 1;
+        typePossibilities[0] = 10000;
         for(int i = 1; i < typePossibilities.length; i++){
-            typePossibilities[i] = typePossibilities[i-1] * 10;
+            typePossibilities[i] = typePossibilities[i-1] / 10;
         }
 
         //gets a random number
@@ -59,9 +59,9 @@ public class Fish extends Item {
 
         //gets a possibility array for the rank
         int[] rankPossibilities = new int[Fishes.values().length];
-        rankPossibilities[0] = 1;
+        rankPossibilities[0] = 10000;
         for(int i = 1; i < rankPossibilities.length; i++){
-            rankPossibilities[i] = rankPossibilities[i-1] * 10;
+            rankPossibilities[i] = rankPossibilities[i-1] / 10;
         }
         //-||-
         int chosenRank = Item.randomize(rankPossibilities);
