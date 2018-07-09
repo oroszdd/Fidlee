@@ -2,20 +2,27 @@ package com.example.orosz.fidlee;
 
 import java.util.Random;
 
+// getFish(user stat) halat ad vissza
+// Constructor()
+// getType() 10x es váltó random főosztály (bronze, silver, gold, platinum, diamond)
+// getRank() 10x es váltó alrag (peasant, knight, baron, viscount, king)
+// getValue() főosztály és alrang függő gold coin bronze(1-3) osztályonként x10, rangonként x2
+
+/*
 public class Fish extends Item {
 
     //To use randomized numbers
     private static Random rand = new Random();
 
-    private int val;
-    private static final int valmax = 10;
+    private int value;
+    //private static final int valmax = 10;
 
-    private Fishes typ;
+    //private Fishes typ;
 
     //Constructor
-    public Fish(int value,Fishes type){
-            val = value;
-            typ = type;
+    public Fish(int value){
+            this.value = value;
+            //this.type = type;
 
     }
 
@@ -37,3 +44,4 @@ public class Fish extends Item {
     }
 
 }
+*/
