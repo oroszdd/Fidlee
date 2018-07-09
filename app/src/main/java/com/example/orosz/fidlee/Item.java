@@ -26,4 +26,26 @@ public abstract class Item {
     public abstract String getName();
 
 
+    // gets a random int from a number of different possibilities
+    public static int randomize(int[] possibilities){
+        int possibility = 0;
+        int chosen = 0;
+
+        for(int i = 0; i < possibilities.length; i++){
+            possibility = possibility + possibilities[i];
+        }
+
+        chosen = rand.nextInt(possibility);
+        possibility = 0;
+
+        for(int i = 0; i < possibilities.length; i++){
+            possibility = possibility + possibilities[i];
+            if((possibility - possibilities[i]) <= chosen && chosen < possibility){
+                return i+1;
+            }
+        }
+
+        return 0;
+    }
+
 }
