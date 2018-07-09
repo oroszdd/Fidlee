@@ -1,5 +1,5 @@
 package com.example.orosz.fidlee;
 
 public enum Fishes {
-    Amur, Simpleton
+    Bronze, Silver, Gold, Platinum, Diamond
 }
