@@ -34,7 +34,7 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
         // Adding 100 null objects for FishingScene
         user = new User();
         for( int i = 0; i < 100; i++){
-            user.items.add(null);
+            user.fishes.add(null);
         }
 
         // Callback

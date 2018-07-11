@@ -61,18 +61,15 @@ public class FishingScene implements Scene {
         canvas.drawText("Backpack",340,Constants.SCREEN_HEIGHT*19/20+10,paint);
 
         // Display messages and kill visibility slowly
-        paint.setTextSize(30);
+        paint.setTextSize(25);
         paint.setColor(Color.WHITE);
+
         for( int i = 0; i < 16; i++){
-            if(i == 0){
-                paint.setTextSize(35);
-            }
-            if(GamePanel.user.items.get(i) != null){
+            if(GamePanel.user.fishes.get(i) != null){
                 paint.setColor(Color.argb(255 - i*15,0,0,0));
-                canvas.drawText("You caught a(n): "+GamePanel.user.items.get(i).getName(), 30, 60 + i*45, paint);
-            }
-            if(i == 0){
-                paint.setTextSize(30);
+                //paint.setColor(GamePanel.user.fishes.get(i).getC);
+                canvas.drawText(GamePanel.user.fishes.get(i).getRank(),30, 60 + i*45, paint);
+                canvas.drawText(GamePanel.user.fishes.get(i).getRank()+" "+GamePanel.user.fishes.get(i).getType()+" -> "+GamePanel.user.fishes.get(i).getValue()+" Gold", 30, 60 + i*45, paint);
             }
         }
     }

@@ -27,7 +27,7 @@ public class Fish extends Item {
 
     }
 
-    //just for dummy fihes
+    //just for dummy fishes
     public Fish(){
         this.value = 0;
         this.type = Fishes.values()[0];

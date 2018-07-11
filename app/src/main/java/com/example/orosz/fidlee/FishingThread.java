@@ -26,7 +26,7 @@ public class FishingThread extends Thread {
 
                 // Main Loop body
 
-                Item item = Item.get();
+                Fish fish = Fish.get();
 
                 //itemName = new String();
 
@@ -35,11 +35,11 @@ public class FishingThread extends Thread {
                 //Item itemName = Item.get();
 
                 // Add item to Data dump
-                GamePanel.user.items.add(0,item);
+                GamePanel.user.fishes.add(0,fish);
 
 
                 // For test purposes
-                Log.i("loop", "Value of the item: " + GamePanel.user.items.get(0).sell()+ ", Size: " + GamePanel.user.items.size() + ", Capacity: " + GamePanel.user.items.capacity());
+                Log.i("loop", "Value of the item: " + GamePanel.user.fishes.get(0).sell()+ ", Size: " + GamePanel.user.fishes.size() + ", Capacity: " + GamePanel.user.fishes.capacity());
                 //Log.i("Loop", "Looping...");
             }
         }

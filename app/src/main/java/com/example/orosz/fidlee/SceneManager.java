@@ -16,6 +16,7 @@ public class SceneManager {
     // Existing Scenes must be implemented HERE
     public SceneManager(){
         ACTIVE_SCENE = 0;
+        scenes.add(new FishingGraphicScene());
         scenes.add(new FishingScene());
         scenes.add(new InfoScene());
         scenes.add(new BackpackScene());
