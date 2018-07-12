@@ -40,6 +40,8 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
         // Callback
         getHolder().addCallback(this);
 
+        Constants.CURRENT_CONTEXT = context;
+
         // Creating the Main thread (most probably duplicate keeping for further observation)
         //thread = new MainThread(getHolder(), this);
 
