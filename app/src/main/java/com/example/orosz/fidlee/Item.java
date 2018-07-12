@@ -5,7 +5,7 @@ import java.util.Random;
 public abstract class Item {
 
     //To use randomized numbers
-    static Random rand = new Random();
+    protected static Random rand = new Random();
 
     // Constructor
     public Item(){
@@ -24,6 +24,9 @@ public abstract class Item {
 
     //Get name
     public abstract String getName();
+
+    //Get id
+    public abstract int getId();
 
 
     // gets a random int from a number of different possibilities
@@ -46,6 +49,22 @@ public abstract class Item {
         }
 
         return 0;
+    }
+
+    public static boolean randomPossibility(double chance){
+        chance = chance*100000;
+        int random = rand.nextInt(100001);
+        if(random < chance){
+            return true;
+        }
+        return false;
+    }
+
+    public static Item getItemById(int id){
+        if(0 <= id && id < 500){
+            return Fish.getFishById(id);
+        }
+        return null;
     }
 
 }

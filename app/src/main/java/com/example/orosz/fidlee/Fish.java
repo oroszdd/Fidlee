@@ -9,110 +9,42 @@ import java.util.Random;
 // getValue() főosztály és alrang függő gold coin bronze(1-3) osztályonként x10, rangonként x2
 
 
-public class Fish extends Item {
+public abstract class Fish extends Item {
 
-    //To use randomized numbers
-    private static Random rand = new Random();
-
-    private int value;
-
-    private Fishes type;
-    private Ranks rank;
-
-    //Constructor
-    public Fish(int value, Fishes type, Ranks rank){
-            this.value = value;
-            this.type = type;
-            this.rank = rank;
-
-    }
-
-    //just for dummy fishes
-    public Fish(){
-        this.value = 0;
-        this.type = Fishes.values()[0];
-        this.rank = Ranks.values()[0];
-    }
+    protected int value;
 
     //Returns a random fish
     public static Fish get() {
 
-        Fishes type = Fishes.values()[0];
-        Ranks rank = Ranks.values()[0];
+        int[] possibilities = new int[5];
+        possibilities[0] = 10000;
+        possibilities[1] = 1000;
+        possibilities[2] = 100;
+        possibilities[3] = 10;
+        possibilities[4] = 1;
 
-        //gets a possibility array for the type
-        int[] typePossibilities = new int[Fishes.values().length];
-        typePossibilities[0] = 10000;
-        for(int i = 1; i < typePossibilities.length; i++){
-            typePossibilities[i] = typePossibilities[i-1] / 10;
+        return Fish.getFishById(Item.randomize(possibilities));
+    }
+
+
+    public static Fish getFishById(int id){
+        switch (id){
+            case 0:
+                return new Fish_Bronze();
+
+            case 1:
+                return new Fish_Silver();
+
+            case 2:
+                return new Fish_Gold();
+
+            case 3:
+                return new Fish_Platinum();
+
+            case 4:
+                return new Fish_Diamond();
         }
-
-        //gets a random number
-        int chosenType = Item.randomize(typePossibilities);
-
-        //chooses fish type based off number
-        for(int i = 1; i <= Fishes.values().length; i++){
-            if(chosenType == i){
-                type = Fishes.values()[i-1];
-            }
-        }
-
-        //gets a possibility array for the rank
-        int[] rankPossibilities = new int[Fishes.values().length];
-        rankPossibilities[0] = 10000;
-        for(int i = 1; i < rankPossibilities.length; i++){
-            rankPossibilities[i] = rankPossibilities[i-1] / 10;
-        }
-        //-||-
-        int chosenRank = Item.randomize(rankPossibilities);
-        //-||- rank
-        for(int i = 1; i <= Ranks.values().length; i++){
-            if(chosenRank == i){
-                rank = Ranks.values()[i-1];
-            }
-        }
-
-        //gets the value of the fish
-        int value = rand.nextInt(3) + 1; //random base value
-        for(int i = 1; i < chosenType; i++){
-            value = value*10; //type multiplier
-        }
-        for(int i = 1; i < chosenRank; i++){
-            value = value*2; //rank multiplier
-        }
-
-        return new Fish(value, type, rank);
-
-    }
-
-    public String getType(){
-        return this.type.name();
-    }
-
-    public String getRank(){
-        return this.rank.name();
-    }
-
-    public int getValue(){
-        return this.value;
-    }
-
-    public int getTypeId(){
-        return this.type.ordinal();
-    }
-
-    public int getRankId(){
-        return this.rank.ordinal();
-    }
-
-    @Override
-    public int sell() {
-        return value;
-    }
-
-    @Override
-    public String getName() {
-        return this.getType();
+        return null;
     }
 
 }
