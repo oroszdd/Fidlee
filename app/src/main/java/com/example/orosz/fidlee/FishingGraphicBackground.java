@@ -1,13 +1,20 @@
 package com.example.orosz.fidlee;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.graphics.RectF;
+import android.graphics.Rect;
+import android.media.Image;
+
 
 public class FishingGraphicBackground {
 
     private float depth;
+
+    private Bitmap background;
+    private Image backg;
 
     //test integer
     private int integer = 0;
@@ -16,13 +23,15 @@ public class FishingGraphicBackground {
 
         this.depth = depth;
 
+        this.background = BitmapFactory.decodeResource(Constants.CURRENT_CONTEXT.getResources(),R.drawable.background2);
+
     }
 
     public void update() {
         integer++;
-        if(integer == 30){
-            depth++;
-            if(depth > 400){
+        if(integer == 1){
+            depth = depth + 0.1f;
+            if(depth > 125){
                 depth = 0;
             }
             integer = 0;
@@ -32,25 +41,11 @@ public class FishingGraphicBackground {
     public void draw(Canvas canvas) {
 
         //! Blue from vivid to dark based on depth
-        for( int i = 0; i < 100; i++ ){
-            Paint paint = new Paint();
-            if(depth <= 100) {
-                paint.setColor(Color.argb(255, 200 - ((int)depth + i), 200 - ((int)depth + i), 255));
-            }
-            else{
-                if(depth + i <= 200){
-                    paint.setColor(Color.argb(255, 200 - ((int)depth + i), 200 - ((int)depth + i), 255));
-                }
-                if(depth + i > 200){
-                    paint.setColor(Color.argb(255, 0, 0, 255-((int)depth+i-200)));
-                }
-                if(depth > 355){
-                    paint.setColor(Color.argb(255, 0, 0, 0));
-                }
-            }
-            //l,t,r,b
-            canvas.drawRect(new RectF(0,Constants.SCREEN_HEIGHT*i/100,Constants.SCREEN_WIDTH,Constants.SCREEN_HEIGHT*(i+1)/100),paint);
-        }
+
+        canvas.drawColor(Color.rgb(100,184,255));
+        canvas.drawColor(Color.argb((int)depth*2,0,0,0));
+
+
 
         //= 10 different sized fishes based on common fishes in this depth
 

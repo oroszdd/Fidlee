@@ -20,9 +20,9 @@ public class FishingGraphicDepthMeter {
 
     public void update() {
         integer++;
-        if(integer == 30){
-            depth++;
-            if(depth > 400){
+        if(integer == 1){
+            depth = depth + 0.1f;
+            if(depth > 125){
                 depth = 0;
             }
             integer = 0;
@@ -37,9 +37,9 @@ public class FishingGraphicDepthMeter {
         paint.setColor(Color.argb(255,255,0,0));
         paint.setTextSize(25);
 
-        for(int i = 0; i <= depth + 100; i = i + 50){
-            if(i > depth - 100)
-            canvas.drawText(i+"m",Constants.SCREEN_WIDTH/5*4,Constants.SCREEN_HEIGHT/2 + Constants.SCREEN_HEIGHT*(i-depth)/100,paint);
+        for(int i = 0; i <= depth + 10; i = i + 5){
+            if(i > depth - 10)
+            canvas.drawText(i+"m",Constants.SCREEN_WIDTH/5*4,Constants.SCREEN_HEIGHT/2 + Constants.SCREEN_HEIGHT*(i-depth)/10,paint);
         }
 
     }
