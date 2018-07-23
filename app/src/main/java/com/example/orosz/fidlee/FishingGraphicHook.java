@@ -12,7 +12,7 @@ public class FishingGraphicHook{
     private Bitmap hook;
 
     public FishingGraphicHook(){
-        this.hook = BitmapFactory.decodeResource(Constants.CURRENT_CONTEXT.getResources(),R.drawable.hook);
+        this.hook = BitmapFactory.decodeResource(Constants.CURRENT_CONTEXT.getResources(),R.drawable.hookandlongrope);
     }
 
     public void update(){

@@ -27,15 +27,10 @@ public class FishingGraphicBackground {
 
     }
 
-    public void update() {
-        integer++;
-        if(integer == 1){
-            depth = depth + 0.1f;
-            if(depth > 125){
-                depth = 0;
-            }
-            integer = 0;
-        }
+    public void update(float depth) {
+
+        this.depth = depth;
+
     }
 
     public void draw(Canvas canvas) {

@@ -52,4 +52,9 @@ public class Chest extends Item {
         return "Chest";
     }
 
+    @Override
+    public int getId() {
+        return 0;
+    }
+
 }

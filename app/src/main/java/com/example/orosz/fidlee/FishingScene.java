@@ -68,8 +68,8 @@ public class FishingScene implements Scene {
             if(GamePanel.user.fishes.get(i) != null){
                 paint.setColor(Color.argb(255 - i*15,0,0,0));
                 //paint.setColor(GamePanel.user.fishes.get(i).getC);
-                canvas.drawText(GamePanel.user.fishes.get(i).getRank(),30, 60 + i*45, paint);
-                canvas.drawText(GamePanel.user.fishes.get(i).getRank()+" "+GamePanel.user.fishes.get(i).getType()+" -> "+GamePanel.user.fishes.get(i).getValue()+" Gold", 30, 60 + i*45, paint);
+                //canvas.drawText(GamePanel.user.fishes.get(i).getRank(),30, 60 + i*45, paint);
+                //canvas.drawText(GamePanel.user.fishes.get(i).getRank()+" "+GamePanel.user.fishes.get(i).getType()+" -> "+GamePanel.user.fishes.get(i).getValue()+" Gold", 30, 60 + i*45, paint);
             }
         }
     }

@@ -28,6 +28,11 @@ public class SceneManager {
 
     public void update(){
         scenes.get(ACTIVE_SCENE).update();
+
+        // Always run the fishing scene even in the background
+        if(ACTIVE_SCENE != 0){
+            scenes.get(0).update();
+        }
     }
 
     public void draw(Canvas canvas){
