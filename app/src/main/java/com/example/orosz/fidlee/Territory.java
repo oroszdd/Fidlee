@@ -18,7 +18,7 @@ public class Territory {
         }
 
         DepthLayer layer = this.layers[i];
-        for(;i < this.layers.length; i++){
+        for(; i < this.layers.length; i++){
             if(this.layers[i].isInLayer(depth)){
                 layer.addDepthLayer(this.layers[i]);
             }

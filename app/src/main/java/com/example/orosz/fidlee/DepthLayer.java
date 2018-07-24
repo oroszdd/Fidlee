@@ -8,6 +8,9 @@ public class DepthLayer {
     private double[] chances;
 
     public DepthLayer(int minDepth, int maxDepth, int[] avalibleItemIds, double[] chances){
+        this.avalibleItemIds = new int[99];
+        this.chances = new double[99];
+
         this.minDepth = minDepth;
         this.maxDepth = maxDepth;
         this.avalibleItemIds = avalibleItemIds;
