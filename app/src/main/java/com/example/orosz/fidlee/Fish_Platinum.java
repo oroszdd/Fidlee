@@ -9,10 +9,6 @@ public class Fish_Platinum extends Fish {
         this.value = rand.nextInt(valMax - valMin + 1) + valMin;
     }
 
-    public static Fish_Platinum get(){
-        return new Fish_Platinum();
-    }
-
     public String getName(){
         return "Platinum";
     }
@@ -22,7 +18,7 @@ public class Fish_Platinum extends Fish {
     }
 
     public int getId(){
-        return 3;
+        return 4;
     }
 
 }

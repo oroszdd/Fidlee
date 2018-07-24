@@ -29,19 +29,19 @@ public abstract class Fish extends Item {
 
     public static Fish getFishById(int id){
         switch (id){
-            case 0:
+            case 1:
                 return new Fish_Bronze();
 
-            case 1:
+            case 2:
                 return new Fish_Silver();
 
-            case 2:
+            case 3:
                 return new Fish_Gold();
 
-            case 3:
+            case 4:
                 return new Fish_Platinum();
 
-            case 4:
+            case 5:
                 return new Fish_Diamond();
         }
         return null;

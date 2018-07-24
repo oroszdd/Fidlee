@@ -51,13 +51,35 @@ public abstract class Item {
         return 0;
     }
 
+    public static int[] randomizeArray(int[] array){
+        int[] readyArray = new int[array.length];
+        int[] sequence = new int[array.length];
+
+        for(int j = 0; j < array.length; j++){
+            sequence[j] = -1;
+        }
+
+        int i = 0;
+        int num;
+        while(i < array.length){
+            num = rand.nextInt(array.length);
+            if(sequence[num] == -1){
+                sequence[num] = i;
+                i++;
+            }
+        }
+
+        for(int j = 0; j < array.length; j++){
+            readyArray[j] = array[sequence[i]];
+        }
+
+        return readyArray;
+    }
+
     public static boolean randomPossibility(double chance){
         chance = chance*100000;
-        int random = rand.nextInt(100001);
-        if(random < chance){
-            return true;
-        }
-        return false;
+        int random = rand.nextInt(100000) + 1;
+        return random < chance;
     }
 
     public static Item getItemById(int id){
@@ -65,6 +87,24 @@ public abstract class Item {
             return Fish.getFishById(id);
         }
         return null;
+    }
+
+    public static int[] addToArray(int[] array, int object){
+        int[] arrayReady = new int[array.length + 1];
+        for(int i = 0; i < array.length; i++){
+            arrayReady[i] = array[i];
+        }
+        arrayReady[array.length] = object;
+        return arrayReady;
+    }
+
+    public static double[] addToArray(double[] array, double object){
+        double[] arrayReady = new double[array.length + 1];
+        for(int i = 0; i < array.length; i++){
+            arrayReady[i] = array[i];
+        }
+        arrayReady[array.length] = object;
+        return arrayReady;
     }
 
 }

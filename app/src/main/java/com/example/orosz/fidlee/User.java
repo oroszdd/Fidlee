@@ -12,6 +12,8 @@ public class User{
     // .remove(index) : removes the indexed element
     // .indexOf("item") : gives back the index of the element
 
+    public Territory activeTerritory;
+
     // Constructor
     User(){
 
